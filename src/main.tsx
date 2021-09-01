@@ -1,11 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createGlobalStyle } from 'styled-components';
+import App from './App';
+import bgImage from './img/bg.jpg';
+
+const GlobalStyles = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    background: url(${bgImage}) #000;
+    background-size: cover;
+    background-position: center;
+  }
+`;
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
+    <GlobalStyles />
     <App />
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
-)
+);
