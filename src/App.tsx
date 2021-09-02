@@ -21,6 +21,8 @@ const App: React.FC = () => {
 
   const gameArea = React.useRef<HTMLDivElement>(null);
 
+  const width = screen.width;
+
   const { player, updatePlayerPos, resetPlayer, playerRotate } = usePlayer();
   const { stage, setStage, rowsCleared } = useStage(player, resetPlayer);
   const { score, setScore, rows, setRows, level, setLevel } = useGameStatus(rowsCleared);
@@ -106,12 +108,24 @@ const App: React.FC = () => {
           ) : (
             <>
               <Display text={`Score: ${score}`} />
-              <Display text={`Rows: ${rows}`} />
+              <Display text={`Lignes: ${rows}`} />
               <Display text={`Level: ${level}`} />
             </>
           )}
         </div>
         <Stage stage={stage} />
+        {/* <div className='display'>
+          {width > 770 ? (
+            <>
+            </>
+          ) : (            
+            <>
+            <Display text={'<'} />
+            <Display text= {'°'}/>
+            <Display text= {'>'} />
+          </>          
+         )}
+        </div> */}
       </StyledTetris>
     </StyledTetrisWrapper>
   );

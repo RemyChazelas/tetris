@@ -8,7 +8,7 @@ export const StyledDisplay = styled.div<Props>`
   box-sizing: border-box;
   display: flex;
   align-items: space-between;
-  margin: 0 0 20px 0;
+  margin: 20px 0 20px 0;
   padding: 20px;
   border: 2px solid #8398f1;
   min-height: 20px;
